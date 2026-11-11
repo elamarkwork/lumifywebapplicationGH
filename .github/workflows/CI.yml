@@ -17,12 +17,13 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET
-      uses: actions/setup-dotnet@v6
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet --framework net10.0 publish -o publish --no-build 
+      run: dotnet build --no-restore --framework net8.0
+    - name: publish
+      run: dotnet  publish -o publish --no-build --framework net8.0
+
