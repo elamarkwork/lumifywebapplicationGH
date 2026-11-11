@@ -25,4 +25,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet publish -o publish --no-build 
+      run: dotnet --framework net10.0 publish -o publish --no-build 
